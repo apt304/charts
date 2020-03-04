@@ -222,7 +222,8 @@ class ArcLabelDecorator<D> extends ArcRendererDecorator<D> {
       ..color = labelSpec?.color ?? Color.black
       ..fontFamily = labelSpec?.fontFamily
       ..fontSize = labelSpec?.fontSize ?? 12
-      ..lineHeight = labelSpec?.lineHeight;
+      ..lineHeight = labelSpec?.lineHeight
+      ..fontWeight = labelSpec?.fontWeight;
   }
 
   /// Helper function to get datum specific style

@@ -21,6 +21,7 @@ class TextStyle implements common.TextStyle {
   String fontFamily;
   common.Color color;
   double lineHeight;
+  String fontWeight;
 
   @override
   bool operator ==(Object other) =>
@@ -28,8 +29,9 @@ class TextStyle implements common.TextStyle {
       fontSize == other.fontSize &&
       fontFamily == other.fontFamily &&
       color == other.color &&
-      lineHeight == other.lineHeight;
+      lineHeight == other.lineHeight &&
+      fontWeight == other.fontWeight;
 
   @override
-  int get hashCode => hashValues(fontSize, fontFamily, color, lineHeight);
+  int get hashCode => hashValues(fontSize, fontFamily, color, lineHeight, fontWeight);
 }

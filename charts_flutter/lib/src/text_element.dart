@@ -21,6 +21,7 @@ import 'package:charts_common/common.dart' as common
         TextDirection,
         TextMeasurement,
         TextStyle;
+import 'package:charts_flutter/src/util/font_weight.dart';
 import 'package:flutter/rendering.dart'
     show Color, TextBaseline, TextPainter, TextSpan, TextStyle;
 
@@ -150,7 +151,9 @@ class TextElement implements common.TextElement {
                 color: color,
                 fontSize: textStyle.fontSize.toDouble(),
                 fontFamily: textStyle.fontFamily,
-                height: textStyle.lineHeight)))
+                height: textStyle.lineHeight,
+                fontWeight: FontWeightUtil.toDartFontWeight(
+                    textStyle.fontWeight))))
       ..textDirection = TextDirection.ltr
       // TODO Flip once textAlign works
       ..textAlign = TextAlign.left

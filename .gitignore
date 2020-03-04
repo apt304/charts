@@ -2,6 +2,8 @@
 .packages
 pubspec.lock
 
+charts_flutter/example/ios/Flutter/flutter_export_environment.sh
+.idea
 .bundle
 _site
 

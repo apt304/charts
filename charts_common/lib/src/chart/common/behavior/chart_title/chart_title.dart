@@ -790,7 +790,8 @@ class _ChartTitleLayoutView<D> extends LayoutView {
       ..color = labelSpec?.color ?? StyleFactory.style.tickColor
       ..fontFamily = labelSpec?.fontFamily
       ..fontSize = labelSpec?.fontSize ?? 18
-      ..lineHeight = labelSpec?.lineHeight;
+      ..lineHeight = labelSpec?.lineHeight
+      ..fontWeight = labelSpec?.fontWeight;
   }
 
   @override

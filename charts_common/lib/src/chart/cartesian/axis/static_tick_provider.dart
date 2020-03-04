@@ -86,7 +86,8 @@ class StaticTickProvider<D> extends TickProvider<D> {
             ..fontFamily = spec.style.fontFamily
             ..fontSize = spec.style.fontSize
             ..color = spec.style.color
-            ..lineHeight = spec.style.lineHeight;
+            ..lineHeight = spec.style.lineHeight
+            ..fontWeight = spec.style.fontWeight;
         }
         ticks.add(tick);
       }

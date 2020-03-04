@@ -103,7 +103,8 @@ class TreeMapLabelDecorator<D> extends TreeMapRendererDecorator<D> {
         ..color = labelSpec?.color ?? Color.black
         ..fontFamily = labelSpec?.fontFamily
         ..fontSize = labelSpec?.fontSize ?? _defaultFontSize
-        ..lineHeight = labelSpec?.lineHeight;
+        ..lineHeight = labelSpec?.lineHeight
+        ..fontWeight = labelSpec?.fontWeight;
 
   /// Gets datum specific style.
   TextStyle _datumStyle(AccessorFn<TextStyleSpec> labelStyleFn, int datumIndex,
