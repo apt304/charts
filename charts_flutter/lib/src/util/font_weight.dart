@@ -1,4 +1,4 @@
-i// Copyright 2020 APT304/Spencer Reeves
+// Copyright 2020 APT304/Spencer Reeves
 
 import 'dart:ui' as ui;
 
@@ -27,6 +27,6 @@ class FontWeightUtil {
       case 'w400':
       default:
         return ui.FontWeight.normal;
-    };
+    }
   }
 }
