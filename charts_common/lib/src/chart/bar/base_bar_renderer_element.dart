@@ -28,6 +28,7 @@ abstract class BaseBarRendererElement {
   num measureOffset;
   num measureOffsetPlusMeasure;
   double strokeWidthPx;
+  int barWidth;
   bool measureIsNull;
   bool measureIsNegative;
 
@@ -46,6 +47,7 @@ abstract class BaseBarRendererElement {
     measureOffset = other.measureOffset;
     measureOffsetPlusMeasure = other.measureOffsetPlusMeasure;
     strokeWidthPx = other.strokeWidthPx;
+    barWidth = other.barWidth;
     measureIsNull = other.measureIsNull;
     measureIsNegative = other.measureIsNegative;
   }

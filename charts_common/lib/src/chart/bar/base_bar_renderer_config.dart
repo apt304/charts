@@ -64,6 +64,8 @@ abstract class BaseBarRendererConfig<D> extends LayoutViewConfig
   /// Stroke width of the target line.
   final double strokeWidthPx;
 
+  final int barWidth;
+
   /// Sets the series weight pattern. This is a pattern of weights used to
   /// calculate the width of bars within a bar group. If not specified, each bar
   /// in the group will have an equal width.
@@ -93,6 +95,7 @@ abstract class BaseBarRendererConfig<D> extends LayoutViewConfig
       this.fillPattern,
       this.stackHorizontalSeparator,
       this.strokeWidthPx = 0.0,
+      this.barWidth,
       SymbolRenderer symbolRenderer,
       this.weightPattern})
       : this.symbolRenderer = symbolRenderer ?? RoundedRectSymbolRenderer();
@@ -122,6 +125,7 @@ abstract class BaseBarRendererConfig<D> extends LayoutViewConfig
         other.minBarLengthPx == minBarLengthPx &&
         other.stackHorizontalSeparator == stackHorizontalSeparator &&
         other.strokeWidthPx == strokeWidthPx &&
+        other.barWidth == barWidth &&
         other.symbolRenderer == symbolRenderer &&
         ListEquality().equals(other.weightPattern, weightPattern);
   }
@@ -135,6 +139,7 @@ abstract class BaseBarRendererConfig<D> extends LayoutViewConfig
     hash = hash * 31 + (minBarLengthPx?.hashCode ?? 0);
     hash = hash * 31 + (stackHorizontalSeparator?.hashCode ?? 0);
     hash = hash * 31 + (strokeWidthPx?.hashCode ?? 0);
+    hash = hash * 31 + (barWidth?.hashCode ?? 0);
     hash = hash * 31 + (symbolRenderer?.hashCode ?? 0);
     hash = hash * 31 + (weightPattern?.hashCode ?? 0);
     return hash;

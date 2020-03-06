@@ -84,6 +84,7 @@ class BarRenderer<D>
     final barGroupWeight = series.getAttr(barGroupWeightKey);
     final numBarGroups = series.getAttr(barGroupCountKey);
 
+
     final bounds = _getBarBounds(
         details.domain,
         domainAxis,
@@ -94,6 +95,7 @@ class BarRenderer<D>
         barGroupIndex,
         previousBarGroupWeight,
         barGroupWeight,
+        config.barWidth,
         numBarGroups);
 
     Point<double> chartPosition;
@@ -139,6 +141,7 @@ class BarRenderer<D>
       Color fillColor,
       FillPatternType fillPattern,
       double strokeWidthPx,
+      int barWidth,
       int barGroupIndex,
       double previousBarGroupWeight,
       double barGroupWeight,
@@ -161,6 +164,7 @@ class BarRenderer<D>
           fillColor: fillColor,
           fillPattern: fillPattern,
           strokeWidthPx: strokeWidthPx,
+          barWidth: barWidth,
           barGroupIndex: barGroupIndex,
           previousBarGroupWeight: previousBarGroupWeight,
           barGroupWeight: barGroupWeight,
@@ -186,6 +190,7 @@ class BarRenderer<D>
       Color fillColor,
       FillPatternType fillPattern,
       double strokeWidthPx,
+      int barWidth,
       int barGroupIndex,
       double previousBarGroupWeight,
       double barGroupWeight,
@@ -200,6 +205,7 @@ class BarRenderer<D>
       ..measureAxisPosition = measureAxisPosition
       ..roundPx = details.roundPx
       ..strokeWidthPx = strokeWidthPx
+      ..barWidth = barWidth
       ..measureIsNull = measureIsNull
       ..measureIsNegative = measureIsNegative
       ..bounds = _getBarBounds(
@@ -212,6 +218,7 @@ class BarRenderer<D>
           barGroupIndex,
           previousBarGroupWeight,
           barGroupWeight,
+          barWidth,
           numBarGroups);
   }
 
@@ -384,6 +391,7 @@ class BarRenderer<D>
       int barGroupIndex,
       double previousBarGroupWeight,
       double barGroupWeight,
+      int barWidth,
       int numBarGroups) {
     // TODO: Investigate why this is negative for a DateTime domain
     // in RTL mode.
@@ -399,7 +407,7 @@ class BarRenderer<D>
     // only have one series, or are stacked, then barWidth should equal
     // domainWidth.
     int spacingLoss = (_barGroupInnerPadding * (numBarGroups - 1));
-    int barWidth = ((domainWidth - spacingLoss) * barGroupWeight).round();
+    barWidth = barWidth ?? ((domainWidth - spacingLoss) * barGroupWeight).round();
 
     // Make sure that bars are at least one pixel wide, so that they will always
     // be visible on the chart. Ideally we should do something clever with the

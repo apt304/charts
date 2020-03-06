@@ -48,6 +48,7 @@ class BarTargetLineRendererConfig<D> extends BaseBarRendererConfig<D> {
       this.overDrawPx = 0,
       this.roundEndCaps = true,
       double strokeWidthPx = 3.0,
+      int barWidth,
       SymbolRenderer symbolRenderer,
       List<int> weightPattern})
       : super(
@@ -57,6 +58,7 @@ class BarTargetLineRendererConfig<D> extends BaseBarRendererConfig<D> {
           layoutPaintOrder: layoutPaintOrder,
           minBarLengthPx: minBarLengthPx,
           strokeWidthPx: strokeWidthPx,
+          barWidth: barWidth,
           symbolRenderer: symbolRenderer ?? LineSymbolRenderer(),
           weightPattern: weightPattern,
         );

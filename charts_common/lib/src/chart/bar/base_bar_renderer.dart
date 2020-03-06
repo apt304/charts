@@ -161,6 +161,7 @@ abstract class BaseBarRenderer<D, R extends BaseBarRendererElement,
 
         details.barStackIndex = 0;
         details.measureOffset = measureOffsetFn(barIndex);
+        details.barWidth = config.barWidth;
 
         if (fillPatternFn != null) {
           details.fillPattern = fillPatternFn(barIndex);
@@ -418,6 +419,7 @@ abstract class BaseBarRenderer<D, R extends BaseBarRendererElement,
                 measureAxis: measureAxis,
                 numBarGroups: barGroupCount,
                 strokeWidthPx: details.strokeWidthPx,
+                barWidth: details.barWidth,
                 measureIsNull: measureIsNull,
                 measureIsNegative: measureIsNegative);
 
@@ -463,6 +465,7 @@ abstract class BaseBarRenderer<D, R extends BaseBarRendererElement,
             measureAxis: measureAxis,
             numBarGroups: barGroupCount,
             strokeWidthPx: details.strokeWidthPx,
+            barWidth: details.barWidth,
             measureIsNull: measureIsNull,
             measureIsNegative: measureIsNegative);
 
@@ -504,6 +507,7 @@ abstract class BaseBarRenderer<D, R extends BaseBarRendererElement,
       Color fillColor,
       FillPatternType fillPattern,
       double strokeWidthPx,
+      int barWidth,
       bool measureIsNull,
       bool measureIsNegative});
 
@@ -527,6 +531,7 @@ abstract class BaseBarRenderer<D, R extends BaseBarRendererElement,
       Color fillColor,
       FillPatternType fillPattern,
       double strokeWidthPx,
+      int barWidth,
       bool measureIsNull,
       bool measureIsNegative});
 

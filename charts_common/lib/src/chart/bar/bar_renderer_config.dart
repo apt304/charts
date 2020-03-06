@@ -38,6 +38,7 @@ class BarRendererConfig<D> extends BaseBarRendererConfig<D> {
     int minBarLengthPx = 0,
     double stackHorizontalSeparator,
     double strokeWidthPx = 0.0,
+    int barWidth,
     this.barRendererDecorator,
     SymbolRenderer symbolRenderer,
     List<int> weightPattern,
@@ -51,6 +52,7 @@ class BarRendererConfig<D> extends BaseBarRendererConfig<D> {
           stackHorizontalSeparator: stackHorizontalSeparator,
           strokeWidthPx: strokeWidthPx,
           symbolRenderer: symbolRenderer,
+          barWidth: barWidth,
           weightPattern: weightPattern,
         );
 
